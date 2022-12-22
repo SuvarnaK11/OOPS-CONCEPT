@@ -8,11 +8,13 @@ function BankAccount(customerName, balance){
     };
     this.withdraw = (amount)=> {
         this.balance -= amount
+    };
+    this.checkBalance = ()=>{
+        this.balance = this.balance
     }
 }
-
-// const myAcc = new BankAccount("Suvarna", 1000);
-// console.log(myAcc);
+const myAcc = new BankAccount("Suvarna", 1000);
+console.log(myAcc.balance);
 const Accounts = []
 
 const acoountForm = document.querySelector('#acoountForm');
@@ -40,7 +42,7 @@ depositForm.addEventListener('submit', (e)=>{
 });
 
 const withdrawForm = document.querySelector('#withdrawForm');
-const Accountnumber = document.querySelector('#Accountnumber');
+//const Accountnumber = document.querySelector('#Accountnumber');
 const withdrawAmount = document.querySelector('#withdrawAmount');
 
 withdrawForm.addEventListener('submit', (e)=>{
@@ -50,4 +52,29 @@ withdrawForm.addEventListener('submit', (e)=>{
    accountW.withdraw(+withdrawAmount.value);
    console.log(Accounts);
 
+});
+
+const checkBalanceForm = document.querySelector('#checkBalanceForm');
+const Accountnumber = document.querySelector('#Accountnumber');
+
+checkBalanceForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+
+    const accnumber = Accounts.find((account)=>account.AccountNumber === +Accountnumber.value)
+
+    console.log(accnumber)
+
+   const check = Accounts.filter((account)=> {
+   if(accnumber){
+    return account.balance
+   }
+   });
+
+//   const check = Accounts.map((obj)=> {
+//     return obj.balance
+//   })
+
+   //console.log(Accounts[0]['balance']);
+  console.log(check)
+    
 })

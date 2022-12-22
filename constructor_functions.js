@@ -9,11 +9,11 @@ function BankAccount(customerName, balance=0){
 
     this.withdraw = (amount)=>{
         this.balance -= amount
-    }
+    }; 
 }
 
-// const radhaAcc = new BankAccount("radha", 0)
-// // console.log(radhaAcc.accountNumber)
+ //const radhaAcc = new BankAccount("radha", 0)
+ //console.log(radhaAcc.accountNumber)
 
 // const surajAcc = new BankAccount("suraj", 2000)
 // surajAcc.balance = 10000
