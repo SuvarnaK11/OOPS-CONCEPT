@@ -25,6 +25,3 @@ const myAcc = new SavingAccount("radha", 300);
 myAcc.deposit(700);
 myAcc.withdraw(500);
 console.log(myAcc);
-console.log(myAcc);
-console.log(myAcc);
-console.log(myAcc);
